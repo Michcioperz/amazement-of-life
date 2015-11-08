@@ -43,7 +43,7 @@ class Character(object):
 def main():
     characters = SeriousRandom([Character() for i in range(random.randrange(2,5))])
     ret = ", ".join([x.full_name() for x in characters.objs[:-1]])+" and "+characters.objs[-1].full_name()+" met up in the "+places()+" near the "+places()+" to discuss the amazement of life together.\n"
-    while len(ret) < 50000:
+    while len(ret.split()) < 50000:
         ret = ret + '\n"'+question_templates()%talk_topics()+'", said %s.'%characters()+"\n"
         for i in range(random.randrange(2, 3*len(characters.objs))):
             ret = ret + '\n"'+response_templates()%(adjective_opinions(), noun_opinions())+'", said %s.'%characters()+"\n"
