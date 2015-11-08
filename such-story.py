@@ -46,7 +46,7 @@ def main():
     while len(ret.split()) < 50000:
         ret = ret + '\n"'+question_templates()%talk_topics()+'", said %s.'%characters()+"\n"
         for i in range(random.randrange(2, 3*len(characters.objs))):
-            ret = ret + '\n"'+response_templates()%(adjective_opinions(), noun_opinions())+'", said %s.'%characters()+"\n"
+            ret = ret + '\n"'+(response_templates()%(adjective_opinions(), noun_opinions()) if random.randrange(10) else "You know what they say, «%s»"%quotes())+'", said %s.'%characters()+"\n"
     ret = ret + "\nAt which point they were too tired to continue, so they just plain fell asleep."
     return ret
 
